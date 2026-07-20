@@ -1,4 +1,32 @@
 <div class="cabecalho"></div>
+<mat-card>
+  <mat-card-content class="menu-card-content">
+    <div class="content">
+      <div class="row">
+        <div class="col-sm-8">
+          <button
+            style="
+              background-color: hsl(var(--border)) !important;
+              color: orange !important;
+              font-size: large !important;
+            "
+            mat-button
+            (click)="navigateTo('')"
+          >
+            HOME
+          </button>
+        </div>
+        <div class="col-sm-4 d-flex align-items-center justify-content-end pe-4">
+          <div class="ms-3">
+            <b style="color: orange !important; font-size: large !important" class="text-white">
+              ACESSOS : {{ 0 }}
+            </b>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
 <div class="container">
   <div class="row mt-1" style="margin-right: 0.5% !important">
     <router-outlet />
