@@ -1,21 +1,17 @@
 <div class="card-game">
   <div class="row align-items-center for-row mb-2">
     <div class="row align-items-center for-row">
-      <div class="col-6 label" style="color: white !important; font-size: large !important">
+      <div class="col-6 label maiuscula-laranja-larga-negrito">
         {{ attribute?.nome }}
       </div>
     </div>
   </div>
-  <div class="row align-items-center for-row">
-    <hr />
-  </div>
-  <div class="for-row mb-2">
-    <div class="col-sm-2 label" style="color: white !important">RACIAL</div>
-    <div class="col-sm-2 label" style="color: white !important; padding-right: 5% !important">
-      OUTRO
-    </div>
-    <div class="col-sm-2 label" style="color: white !important">COMPR.</div>
-    <div class="col-4 col-sm-4 label d-flex justify-content-center" style="color: white !important">
+  <hr />
+  <div class="row mb-2">
+    <div class="col-sm-2 label maiuscula-laranja-larga">RACIAL</div>
+    <div class="col-sm-2 label maiuscula-laranja-larga">OUTRO</div>
+    <div class="col-sm-2 label maiuscula-laranja-larga">COMPR.</div>
+    <div class="col-sm-6 label d-flex justify-content-center" style="color: white !important">
       <span class="material-symbols-outlined" disabled>
         <mat-icon style="cursor: auto !important; padding-left: 20% !important"
           >shopping_cart</mat-icon
@@ -41,8 +37,7 @@
       </div>
       <div class="col-2">
         <button
-          style="color: #7a0000 !important"
-          class="btn btn-outline-danger btn-sm w-100"
+          class="btn btn-sm w-100"
           [disabled]="attribute!.comprado === 10"
           (click)="calculaPontos(attribute!.comprado! + 1)"
         >
@@ -51,8 +46,7 @@
       </div>
       <div class="col-2">
         <button
-          style="color: #7a0000 !important"
-          class="btn btn-outline-danger btn-sm w-100"
+          class="btn btn-sm w-100"
           [disabled]="attribute!.comprado! === -1"
           (click)="calculaPontos(attribute!.comprado! - 1)"
         >

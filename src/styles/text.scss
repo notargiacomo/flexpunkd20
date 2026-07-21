@@ -6,11 +6,11 @@ h2,
 h4,
 h5 {
   margin-top: 1% !important;
-  color: orange !important;
+  color: darkgoldenrod !important;
 }
 
 b {
-  color: orange !important;
+  color: darkgoldenrod !important;
 }
 
 .negrito-centralizado > b {
@@ -18,5 +18,25 @@ b {
 }
 
 label {
-  color: orange !important;
+  color: darkgoldenrod !important;
+}
+
+hr {
+  margin-left: 2%;
+  margin-right: 2% !important;
+}
+
+.maiuscula-laranja-larga-negrito {
+  text-transform: uppercase !important;
+  color: darkgoldenrod !important;
+  font-size: large !important;
+  font-weight: bold;
+  margin: 2%;
+}
+
+.maiuscula-laranja-larga {
+  text-transform: uppercase !important;
+  color: darkgoldenrod !important;
+  font-size: large !important;
+  padding: auto !important;
 }

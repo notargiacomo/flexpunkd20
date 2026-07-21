@@ -9,13 +9,17 @@
     0 0 40px rgba(255, 140, 0, 0.08) !important;
 }
 
+.mdc-card .card-game {
+  margin-bottom: 20% !important;
+}
+
 .mat-mdc-card {
   width: 100% !important;
   //   padding: 1% !important;
   // margin: 1% !important;
   // border: 5px solid #440512 !important; /* moldura */
   border-radius: 10px !important; /* Arredonda os cantos */
-  border: 2px solid orange !important; /* Moldura */
+  border: 2px solid darkgoldenrod !important; /* Moldura */
 }
 
 .mdc-card .card-game {
@@ -34,7 +38,7 @@
     padding: 10px !important;
     font-family: 'Oswald' !important;
     border-radius: 5px !important; /* Arredonda os cantos */
-    border: 1px solid orange !important; /* Moldura */
+    border: 1px solid darkgoldenrod !important; /* Moldura */
   }
 
   .mat-mdc-card-content {
@@ -50,92 +54,6 @@
     font-family: 'Oswald' !important;
     background-color: #310d0d !important;
   }
-
-  th {
-    b {
-      color: black !important;
-      text-transform: uppercase !important;
-    }
-  }
-
-  b {
-    color: white !important;
-  }
-
-  table {
-    border-collapse: collapse;
-    background: #fffdf9;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    border: 2px solid #a00000;
-    width: 420px;
-  }
-
-  caption {
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #a00000;
-    font-size: 1.1em;
-    border-top: 2px solid #a00000;
-    border-bottom: 2px solid #a00000;
-    padding: 6px 0;
-    letter-spacing: 0.5px;
-  }
-
-  th,
-  td {
-    border: 1px solid #d8c5b0;
-    padding: 6px 12px;
-    text-align: left;
-  }
-
-  th {
-    background: #efe4d4;
-    color: #3b1e0c;
-    text-align: center;
-  }
-
-  td {
-    color: #2e1b0c;
-  }
-
-  tr:nth-child(even) td {
-    background: #f8f3ec;
-  }
-
-  td:first-child {
-    font-weight: bold;
-  }
-
-  img {
-    width: 100% !important; /* Largura máxima da imagem */
-    height: 400px !important; /* Altura máxima da imagem */
-
-    object-fit: contain !important; /* Mantém as proporções */
-    border: 0px solid rgb(68, 5, 18) !important; /* Moldura */
-    // border-radius: 15px; /* Bordas arredondadas */
-    // box-shadow: 0 4px 6px rgb(68, 5, 18) !important; /* Sombra suave */
-    // @media (max-width: 768px) {
-    //   width: 100% !important; /* Largura máxima da imagem */
-    //   height: 300px !important; /* Altura máxima da imagem */
-    //   border: 1px solid rgb(68, 5, 18) !important; /* Moldura */
-    //   box-shadow: 0 2px 3px rgb(68, 5, 18) !important; /* Sombra suave */
-    //   padding: 5px !important;
-    //   object-fit: cover !important;
-    // }
-  }
-
-  h5 {
-    color: rgba(255, 140, 0, 0.08) !important;
-  }
-
-  button {
-    color: white !important;
-    border: 1px solid white !important; /* Moldura */
-  }
-
-  label {
-    color: #f8f3ec !important;
-  }
 }
 
 .mdc-card .card-game label {
@@ -143,5 +61,5 @@
 }
 
 .mat-card-title {
-  color: orange !important;
+  color: darkgoldenrod !important;
 }
