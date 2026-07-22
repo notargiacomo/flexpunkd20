@@ -22,8 +22,6 @@ label {
 }
 
 hr {
-  margin-left: 2%;
-  margin-right: 2% !important;
 }
 
 .maiuscula-laranja-larga-negrito {
@@ -31,12 +29,16 @@ hr {
   color: darkgoldenrod !important;
   font-size: large !important;
   font-weight: bold;
-  margin: 2%;
+  padding-bottom: 1% !important;
 }
 
 .maiuscula-laranja-larga {
   text-transform: uppercase !important;
   color: darkgoldenrod !important;
-  font-size: large !important;
+  font-size: small !important;
   padding: auto !important;
+}
+
+.text-justify {
+  text-align: justify;
 }
