@@ -8,6 +8,17 @@
 @use 'styles/table.scss';
 @use 'styles/field.scss';
 
+:root {
+  @include mat.tabs-overrides(
+    (
+      active-label-text-color: darkgoldenrod,
+      active-focus-label-text-color: darkgoldenrod,
+      active-focus-indicator-color: darkgoldenrod,
+      inactive-label-text-color: darksalmon,
+    )
+  );
+}
+
 html {
   height: 100%;
   @include mat.theme(
