@@ -55,4 +55,24 @@ export class Home implements OnInit {
 
     this.points = 0;
   }
+
+  calculoCapacidadeCarga(forca: number) {
+    return 10 + (forca > 0 ? forca * 2 : forca);
+  }
+
+  calculoDefesa(destreza: number) {
+    return 10 + destreza;
+  }
+
+  calculoVida(constituicao: number) {
+    return 3 + constituicao;
+  }
+
+  calculoEstamina(constituicao: number) {
+    return 3 + constituicao;
+  }
+
+  calculoMana(sabedoria: number) {
+    return 3 + sabedoria;
+  }
 }

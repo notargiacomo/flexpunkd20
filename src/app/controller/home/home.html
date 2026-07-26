@@ -15,8 +15,8 @@
   </div>
   <br />
   @if (isMobile) {
-    <mat-tab-group active-indicator-color="darkgoldenrod" inactive-label-text-color="darksalmon">
-      <mat-tab class="tab" label="Calculo">
+    <mat-tab-group>
+      <mat-tab class="tab" label="Cálculo">
         <div class="row">
           <div class="col-12">
             <app-attribute
@@ -87,8 +87,8 @@
           </div>
         </div>
       </mat-tab>
-      <mat-tab label="Explicação"> Content 2 </mat-tab>
-      <mat-tab label="Imagem"> Content 3 </mat-tab>
+      <mat-tab label="Descrição"> Content 2 </mat-tab>
+      <mat-tab label="Sub-Categoria"> Content 3 </mat-tab>
     </mat-tab-group>
   } @else {
     <div class="row">
@@ -98,6 +98,40 @@
           [attribute]="for"
           (changePoints)="calculaPontos($event)"
         ></app-attribute>
+      </div>
+      <div class="col-6">
+        <p>
+          Poderio muscular do seu personagem. A capacidade de carregar, empurrar, arremesssar e até
+          causar dano aplicado a armas. Duas subcategorias de atributos são definidas pela força:
+          CAPACIDADE DE CARGA E ATAQUE CORPO A CORPO.
+        </p>
+      </div>
+      <div class="col-3">
+        <div class="card-game">
+          <div class="row align-items-center for-row mb-2">
+            <div class="row align-items-center for-row">
+              <div class="col-12 label maiuscula-laranja-larga-negrito-center">
+                CAPACIDADE DE CARGA
+              </div>
+              <br />
+              <div class="col-12 label maiuscula-laranja-xxlarga-negrito-center">
+                {{ calculoCapacidadeCarga(this.for.total!) }}
+              </div>
+            </div>
+          </div>
+          <br />
+          <div class="row align-items-center for-row mb-2">
+            <div class="row align-items-center for-row">
+              <div class="col-12 label maiuscula-laranja-larga-negrito-center">
+                ATAQUE CORPO A CORPO
+              </div>
+              <br />
+              <div class="col-12 label maiuscula-laranja-xxlarga-negrito-center">
+                {{ this.for.total! }}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <br />
@@ -109,6 +143,38 @@
           (changePoints)="calculaPontos($event)"
         ></app-attribute>
       </div>
+      <div class="col-6">
+        <p>
+          Poderio muscular do seu personagem. A capacidade de carregar, empurrar, arremesssar e até
+          causar dano aplicado a armas. Duas subcategorias de atributos são definidas pela força:
+          CAPACIDADE DE CARGA E ATAQUE CORPO A CORPO.
+        </p>
+      </div>
+      <div class="col-3">
+        <div class="card-game">
+          <div class="row align-items-center for-row mb-2">
+            <div class="row align-items-center for-row">
+              <div class="col-12 label maiuscula-laranja-larga-negrito-center">DEFESA</div>
+              <br />
+              <div class="col-12 label maiuscula-laranja-xxlarga-negrito-center">
+                {{ calculoDefesa(this.des.total!) }}
+              </div>
+            </div>
+          </div>
+          <br />
+          <div class="row align-items-center for-row mb-2">
+            <div class="row align-items-center for-row">
+              <div class="col-12 label maiuscula-laranja-larga-negrito-center">
+                ATAQUE A DISTÂNCIA
+              </div>
+              <br />
+              <div class="col-12 label maiuscula-laranja-xxlarga-negrito-center">
+                {{ this.des.total! }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <br />
     <div class="row">
@@ -118,6 +184,36 @@
           [attribute]="con"
           (changePoints)="calculaPontos($event)"
         ></app-attribute>
+      </div>
+      <div class="col-6">
+        <p>
+          Poderio muscular do seu personagem. A capacidade de carregar, empurrar, arremesssar e até
+          causar dano aplicado a armas. Duas subcategorias de atributos são definidas pela força:
+          CAPACIDADE DE CARGA E ATAQUE CORPO A CORPO.
+        </p>
+      </div>
+      <div class="col-3">
+        <div class="card-game">
+          <div class="row align-items-center for-row mb-2">
+            <div class="row align-items-center for-row">
+              <div class="col-12 label maiuscula-laranja-larga-negrito-center">PONTOS DE VIDA</div>
+              <br />
+              <div class="col-12 label maiuscula-laranja-xxlarga-negrito-center">
+                {{ this.calculoVida(this.con.total!) + '/nível' }}
+              </div>
+            </div>
+          </div>
+          <br />
+          <div class="row align-items-center for-row mb-2">
+            <div class="row align-items-center for-row">
+              <div class="col-12 label maiuscula-laranja-larga-negrito-center">ESTAMINA</div>
+              <br />
+              <div class="col-12 label maiuscula-laranja-xxlarga-negrito-center">
+                {{ this.calculoVida(this.con.total!) + '/nível' }}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <br />
@@ -129,6 +225,40 @@
           (changePoints)="calculaPontos($event)"
         ></app-attribute>
       </div>
+      <div class="col-6">
+        <p>
+          Poderio muscular do seu personagem. A capacidade de carregar, empurrar, arremesssar e até
+          causar dano aplicado a armas. Duas subcategorias de atributos são definidas pela força:
+          CAPACIDADE DE CARGA E ATAQUE CORPO A CORPO.
+        </p>
+      </div>
+      <div class="col-3">
+        <div class="card-game">
+          <div class="row align-items-center for-row mb-2">
+            <div class="row align-items-center for-row">
+              <div class="col-12 label maiuscula-laranja-larga-negrito-center">
+                QUANTIDADE DE PERÍCIA
+              </div>
+              <br />
+              <div class="col-12 label maiuscula-laranja-xxlarga-negrito-center">
+                {{ this.int.total! }}
+              </div>
+            </div>
+          </div>
+          <br />
+          <div class="row align-items-center for-row mb-2">
+            <div class="row align-items-center for-row">
+              <div class="col-12 label maiuscula-laranja-larga-negrito-center">
+                QUANTIDADE DE IDIOMA
+              </div>
+              <br />
+              <div class="col-12 label maiuscula-laranja-xxlarga-negrito-center">
+                {{ this.int.total! }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <br />
     <div class="row">
@@ -138,6 +268,38 @@
           [attribute]="sab"
           (changePoints)="calculaPontos($event)"
         ></app-attribute>
+      </div>
+      <div class="col-6">
+        <p>
+          Poderio muscular do seu personagem. A capacidade de carregar, empurrar, arremesssar e até
+          causar dano aplicado a armas. Duas subcategorias de atributos são definidas pela força:
+          CAPACIDADE DE CARGA E ATAQUE CORPO A CORPO.
+        </p>
+      </div>
+      <div class="col-3">
+        <div class="card-game">
+          <div class="row align-items-center for-row mb-2">
+            <div class="row align-items-center for-row">
+              <div class="col-12 label maiuscula-laranja-larga-negrito-center">PONTOS DE MANA</div>
+              <br />
+              <div class="col-12 label maiuscula-laranja-xxlarga-negrito-center">
+                {{ calculoMana(this.sab.total!) }}
+              </div>
+            </div>
+          </div>
+          <br />
+          <div class="row align-items-center for-row mb-2">
+            <div class="row align-items-center for-row">
+              <div class="col-12 label maiuscula-laranja-larga-negrito-center">
+                N° REAÇÕES POR RODADA
+              </div>
+              <br />
+              <div class="col-12 label maiuscula-laranja-xxlarga-negrito-center">
+                {{ this.sab.total! }}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <br />
@@ -149,6 +311,38 @@
           (changePoints)="calculaPontos($event)"
         ></app-attribute>
       </div>
+      <div class="col-6">
+        <p>
+          Poderio muscular do seu personagem. A capacidade de carregar, empurrar, arremesssar e até
+          causar dano aplicado a armas. Duas subcategorias de atributos são definidas pela força:
+          CAPACIDADE DE CARGA E ATAQUE CORPO A CORPO.
+        </p>
+      </div>
+      <div class="col-3">
+        <div class="card-game">
+          <div class="row align-items-center for-row mb-2">
+            <div class="row align-items-center for-row">
+              <div class="col-12 label maiuscula-laranja-larga-negrito-center">CRÉDITO SOCIAL</div>
+              <br />
+              <div class="col-12 label maiuscula-laranja-xxlarga-negrito-center">
+                {{ this.car.total! }}
+              </div>
+            </div>
+          </div>
+          <br />
+          <div class="row align-items-center for-row mb-2">
+            <div class="row align-items-center for-row">
+              <div class="col-12 label maiuscula-laranja-larga-negrito-center">
+                PONTOS DE DETERMINAÇÃO
+              </div>
+              <br />
+              <div class="col-12 label maiuscula-laranja-xxlarga-negrito-center">
+                {{ this.car.total! }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <br />
     <div class="row">
@@ -158,6 +352,38 @@
           [attribute]="sor"
           (changePoints)="calculaPontos($event)"
         ></app-attribute>
+      </div>
+      <div class="col-6">
+        <p>
+          Poderio muscular do seu personagem. A capacidade de carregar, empurrar, arremesssar e até
+          causar dano aplicado a armas. Duas subcategorias de atributos são definidas pela força:
+          CAPACIDADE DE CARGA E ATAQUE CORPO A CORPO.
+        </p>
+      </div>
+      <div class="col-3">
+        <div class="card-game">
+          <div class="row align-items-center for-row mb-2">
+            <div class="row align-items-center for-row">
+              <div class="col-12 label maiuscula-laranja-larga-negrito-center">
+                BÔNUS DE TESOURO (%)
+              </div>
+              <br />
+              <div class="col-12 label maiuscula-laranja-xxlarga-negrito-center">
+                {{ this.sor.total + '%' }}
+              </div>
+            </div>
+          </div>
+          <br />
+          <div class="row align-items-center for-row mb-2">
+            <div class="row align-items-center for-row">
+              <div class="col-12 label maiuscula-laranja-larga-negrito-center">PONTOS DE SORTE</div>
+              <br />
+              <div class="col-12 label maiuscula-laranja-xxlarga-negrito-center">
+                {{ this.sor.total! }}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   }

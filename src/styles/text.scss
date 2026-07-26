@@ -1,5 +1,7 @@
 p {
   text-align: justify !important;
+  color: darkgoldenrod !important;
+  font-size: medium !important;
 }
 
 h2,
@@ -37,6 +39,24 @@ hr {
   color: darkgoldenrod !important;
   font-size: small !important;
   padding: auto !important;
+}
+
+.maiuscula-laranja-larga-negrito-center {
+  color: darkgoldenrod !important;
+  font-size: large !important;
+  font-weight: bold;
+  text-align: center !important;
+  padding-bottom: 1% !important;
+  padding-top: 5%;
+}
+
+.maiuscula-laranja-xxlarga-negrito-center {
+  color: darkgoldenrod !important;
+  font-size: x-large !important;
+  font-weight: bold;
+  text-align: center !important;
+  padding-bottom: 1% !important;
+  padding-top: 5%;
 }
 
 .text-justify {
