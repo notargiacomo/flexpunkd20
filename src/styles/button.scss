@@ -1,7 +1,8 @@
 .button {
-  border: 1px solid darkgoldenrod !important;
-  background-color: rebeccapurple !important;
-  color: darkgoldenrod !important;
+  background: #70248d !important;
+  color: white !important;
+
+  border: 1px solid #a94cff !important;
   padding: 1% !important;
   margin: 1% !important;
   border-radius: 5px !important;
@@ -10,14 +11,19 @@
 }
 
 .btn {
-  border: 1px solid darkgoldenrod !important;
-  background-color: rebeccapurple !important;
-  color: darkgoldenrod !important;
+  background: #70248d !important;
+  color: white !important;
+
+  border: 1px solid #a94cff !important;
   padding: 1% !important;
   margin: 1% !important;
   border-radius: 5px !important;
 }
 
+.button-menu {
+  background: #70248d !important;
+  color: white !important;
+}
 // button[mat-flat-button] {
 //   text-transform: uppercase; /* Deixa o texto em maiúsculas */
 //   font-size: 0.75rem; /* Reduz o tamanho da fonte */
