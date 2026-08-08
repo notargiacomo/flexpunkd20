@@ -94,54 +94,160 @@
     <mat-card>
       <div class="row">
         <div class="col-3">
-          <app-attribute
-            [points]="points"
-            [attribute]="for"
-            (changePoints)="calculaPontos($event)"
-          ></app-attribute>
+          <div class="row">
+            <div class="col-12">
+              <app-attribute
+                [points]="points"
+                [attribute]="for"
+                (changePoints)="calculaPontos($event)"
+              ></app-attribute>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 mt-2">
+              <div class="card-game">
+                <div class="row align-items-center for-row mb-2">
+                  <div class="row align-items-center for-row">
+                    <div class="col-12 label maiuscula-laranja-larga-negrito-center">
+                      CAPACIDADE DE CARGA
+                    </div>
+                    <br />
+                    <div class="col-12 label maiuscula-laranja-xxlarga-negrito-center">
+                      {{ calculoCapacidadeCarga(this.for.total!) }}
+                    </div>
+                  </div>
+                </div>
+                <br />
+                <div class="row align-items-center for-row mb-2">
+                  <div class="row align-items-center for-row">
+                    <div class="col-12 label maiuscula-laranja-larga-negrito-center">
+                      ATAQUE CORPO A CORPO
+                    </div>
+                    <br />
+                    <div class="col-12 label maiuscula-laranja-xxlarga-negrito-center">
+                      {{ this.for.total! }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="col-6">
+
+        <div class="col-9">
           <p>
-            Poderio muscular do seu personagem. A capacidade de carregar, empurrar, arremesssar e
-            até causar dano aplicado a armas. Duas subcategorias de atributos são definidas pela
-            força: CAPACIDADE DE CARGA E ATAQUE CORPO A CORPO.
+            <b>FORÇA</b> representa o poder físico do seu personagem. Ela define o quanto ele
+            consegue carregar, empurrar, arremessar e a força dos seus ataques com armas corpo a
+            corpo.
           </p>
+
           <p>
-            Sua CAPACIDADE DE CARGA é calculada por 10 espaços +2 por ponto de Força (ou –1 por
-            ponto de Força negativo). Se ultrapassar esse limite, fica sobrecarregado — sofre
-            penalidade de armadura –5 e seu deslocamento é reduzido em –3m. Você não pode carregar
-            mais do que o dobro do seu limite. Assim, um personagem com Força 2 pode carregar até 14
-            espaços sem penalidade, e até 28 espaços ficando sobrecarregado. Ele não pode carregar
-            mais de 28 espaços de itens.
+            A Força influencia duas coisas principais:
+            <b>CAPACIDADE DE CARGA</b> e <b>ATAQUE CORPO A CORPO</b>.
           </p>
+
           <p>
-            Seu ATAQUE CORPO A CORPO é de mesmo valor da FORÇA + TREINAMENTO + BÔNUS COM ARMA, e
-            somado ao D20 tenta ser maior ou igual a DEFESA do oponente. Em caso de sucesso, você o
+            <b>CAPACIDADE DE CARGA:</b> seu limite normal é de
+            <b>10 espaços + 2 para cada ponto de Força</b>. Se sua Força for negativa, você perde 1
+            espaço por ponto.
+          </p>
+
+          <p>
+            Se você ultrapassar seu limite de carga, ficará
+            <b>SOBRECARREGADO</b>. Enquanto estiver sobrecarregado, sua
+            <b>Penalidade de Armadura sofre –5</b> e seu <b>deslocamento diminui em 3 metros</b>.
+            Você pode carregar, no máximo, o dobro do seu limite normal.
+          </p>
+
+          <p>
+            <b>Exemplo:</b> um personagem com <b>Força 2</b> pode carregar <b>14 espaços</b> sem
+            penalidade. Se carregar mais de 14, ficará sobrecarregado, podendo chegar a no máximo
+            <b>28 espaços</b>. Ele não consegue carregar mais do que isso.
+          </p>
+
+          <p>
+            <b>ATAQUE CORPO A CORPO:</b> representa sua capacidade de acertar ataques usando armas
+            ou golpes de perto.
+          </p>
+
+          <p>
+            Para atacar, some <b>Força + Treinamento + Bônus da Arma</b> e depois role <b>1d20</b>.
+            Se o resultado for igual ou maior que a <b>Defesa</b> do oponente, o ataque acerta.
+          </p>
+        </div>
+      </div>
+    </mat-card>
+    <br />
+    <mat-card>
+      <div class="row">
+        <div class="col-9">
+          <p>
+            <b>DESTREZA</b> representa a agilidade, os reflexos, o equilíbrio e a coordenação do seu
+            personagem. Ela influencia duas coisas principais: <b>DEFESA</b> e
+            <b>ATAQUE À DISTÂNCIA</b>.
+          </p>
+
+          <p>
+            <b>DEFESA:</b> representa o quanto é difícil acertar seu personagem em combate. Sua
+            Defesa é calculada assim:
+            <b>10 + Destreza + Bônus de Armadura e Escudo + metade do seu nível</b>.
+          </p>
+
+          <p>
+            Quando um inimigo atacar você, ele precisa rolar o
+            <b>d20 + bônus de ataque</b>. Se o resultado for igual ou maior que sua <b>Defesa</b>, o
+            ataque acerta.
+          </p>
+
+          <p>
+            <b>ATAQUE À DISTÂNCIA:</b> representa sua capacidade de acertar inimigos usando arcos,
+            armas de fogo, armas arremessadas ou outros ataques feitos de longe.
+          </p>
+
+          <p>
+            Para atacar, some <b>Destreza + Treinamento + Bônus da Arma</b> e depois role
+            <b>1d20</b>. Se o resultado for igual ou maior que a <b>Defesa</b> do oponente, o ataque
             acerta.
           </p>
+
+          <p>
+            <b>Exemplo:</b> se sua Destreza é 3, você tem Treinamento +2 e sua arma fornece +1, seu
+            bônus de ataque à distância será <b>+6</b>. Ao rolar 1d20, você soma +6 ao resultado.
+          </p>
         </div>
         <div class="col-3">
-          <div class="card-game">
-            <div class="row align-items-center for-row mb-2">
-              <div class="row align-items-center for-row">
-                <div class="col-12 label maiuscula-laranja-larga-negrito-center">
-                  CAPACIDADE DE CARGA
-                </div>
-                <br />
-                <div class="col-12 label maiuscula-laranja-xxlarga-negrito-center">
-                  {{ calculoCapacidadeCarga(this.for.total!) }}
-                </div>
-              </div>
+          <div class="row">
+            <div class="col-12">
+              <app-attribute
+                [points]="points"
+                [attribute]="des"
+                (changePoints)="calculaPontos($event)"
+              ></app-attribute>
             </div>
-            <br />
-            <div class="row align-items-center for-row mb-2">
-              <div class="row align-items-center for-row">
-                <div class="col-12 label maiuscula-laranja-larga-negrito-center">
-                  ATAQUE CORPO A CORPO
+          </div>
+          <div class="row">
+            <div class="col-12 mt-2">
+              <div class="card-game">
+                <div class="row align-items-center for-row mb-2">
+                  <div class="row align-items-center for-row">
+                    <div class="col-12 label maiuscula-laranja-larga-negrito-center">DEFESA</div>
+                    <br />
+                    <div class="col-12 label maiuscula-laranja-xxlarga-negrito-center">
+                      {{ calculoDefesa(this.des.total!) }}
+                    </div>
+                  </div>
                 </div>
                 <br />
-                <div class="col-12 label maiuscula-laranja-xxlarga-negrito-center">
-                  {{ this.for.total! }}
+                <div class="row align-items-center for-row mb-2">
+                  <div class="row align-items-center for-row">
+                    <div class="col-12 label maiuscula-laranja-larga-negrito-center">
+                      ATAQUE A DISTÂNCIA
+                    </div>
+                    <br />
+                    <div class="col-12 label maiuscula-laranja-xxlarga-negrito-center">
+                      {{ this.des.total! }}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -153,49 +259,134 @@
     <mat-card>
       <div class="row">
         <div class="col-3">
-          <app-attribute
-            [points]="points"
-            [attribute]="des"
-            (changePoints)="calculaPontos($event)"
-          ></app-attribute>
-        </div>
-        <div class="col-6">
-          <p>
-            Sua agilidade, reflexos, equilíbrio e coordenação motora. A Destreza é aplicada a duas
-            subcategoria de atributo: DEFESA e ATAQUE A DISTÂNCIA.
-          </p>
-          <p>
-            A DEFESA representa o quão difícil é acertá-lo em combate. Sua Defesa é 10 + sua
-            Destreza + seu bônus de armadura e escudo + metade do nível. Quando você ataca um
-            inimigo, a CD do seu teste de ataque é à Defesa dele.
-          </p>
-          <p></p>
-          <p>
-            Seu ATAQUE A DISTÂNCIA é de mesmo valor da DESTREZA + TREINAMENTO + BÔNUS COM ARMA, e
-            somado ao D20 tenta ser maior ou igual a DEFESA do oponente. Em caso de sucesso, você o
-            acerta.
-          </p>
-        </div>
-        <div class="col-3">
-          <div class="card-game">
-            <div class="row align-items-center for-row mb-2">
-              <div class="row align-items-center for-row">
-                <div class="col-12 label maiuscula-laranja-larga-negrito-center">DEFESA</div>
+          <div class="row">
+            <div class="col-12">
+              <app-attribute
+                [points]="points"
+                [attribute]="con"
+                (changePoints)="calculaPontos($event)"
+              ></app-attribute>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 mt-2">
+              <div class="card-game">
+                <div class="row align-items-center for-row mb-2">
+                  <div class="row align-items-center for-row">
+                    <div class="col-12 label maiuscula-laranja-larga-negrito-center">
+                      PONTOS DE VIDA
+                    </div>
+                    <br />
+                    <div class="col-12 label maiuscula-laranja-xxlarga-negrito-center">
+                      {{ this.calculoVida(this.con.total!) + '/nível' }}
+                    </div>
+                  </div>
+                </div>
                 <br />
-                <div class="col-12 label maiuscula-laranja-xxlarga-negrito-center">
-                  {{ calculoDefesa(this.des.total!) }}
+                <div class="row align-items-center for-row mb-2">
+                  <div class="row align-items-center for-row">
+                    <div class="col-12 label maiuscula-laranja-larga-negrito-center">ESTAMINA</div>
+                    <br />
+                    <div class="col-12 label maiuscula-laranja-xxlarga-negrito-center">
+                      {{ this.calculoVida(this.con.total!) + '/nível' }}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <br />
-            <div class="row align-items-center for-row mb-2">
-              <div class="row align-items-center for-row">
-                <div class="col-12 label maiuscula-laranja-larga-negrito-center">
-                  ATAQUE A DISTÂNCIA
+          </div>
+        </div>
+        <div class="col-9">
+          <p>
+            <b>CONSTITUIÇÃO</b> representa a saúde, a resistência e o vigor do seu personagem. Ela
+            influencia duas coisas principais: <b>PONTOS DE VIDA</b> e <b>PONTOS DE ESTAMINA</b>.
+          </p>
+
+          <p>
+            Se sua Constituição mudar, seus <b>Pontos de Vida</b> e <b>Pontos de Estamina</b> também
+            mudam de acordo com o novo valor.
+          </p>
+
+          <p>
+            <b>PONTOS DE VIDA (PV):</b> representam quanto seu personagem consegue resistir antes de
+            ser derrotado. Você ganha <b>3 + Constituição</b> Pontos de Vida a cada nível. Seus
+            Pontos de Vida são recuperados por <b>cura e descanso</b>.
+          </p>
+
+          <p>
+            <b>PONTOS DE ESTAMINA (PE):</b> representam sua energia para realizar habilidades de
+            combate. Você ganha <b>3 + Constituição</b> Pontos de Estamina a cada nível.
+          </p>
+
+          <p>
+            Os Pontos de Estamina são gastos para usar habilidades de combate. Você recupera
+            <b>1 ponto de Estamina</b> sempre que seu personagem <b>acerta ou recebe um ataque</b>.
+          </p>
+
+          <p>
+            <b>Exemplo:</b> se sua Constituição é 2, você ganha
+            <b>5 Pontos de Vida e 5 Pontos de Estamina por nível</b>. Ao atingir o 3º nível, terá
+            ganho 15 pontos de cada atributo por nível.
+          </p>
+        </div>
+      </div>
+    </mat-card>
+    <br />
+    <mat-card>
+      <div class="row">
+        <div class="col-9">
+          <p>
+            <b>INTELIGÊNCIA</b> representa a capacidade de raciocínio, memória e conhecimento do seu
+            personagem. Ela também determina a quantidade de <b>PERÍCIAS EXTRAS</b> e
+            <b>IDIOMAS EXTRAS</b> que ele pode aprender.
+          </p>
+
+          <p>
+            Se sua Inteligência for positiva, você recebe uma quantidade de
+            <b>Perícias Extras</b> e <b>Idiomas Extras</b> igual ao valor da sua Inteligência.
+          </p>
+
+          <p>
+            <b>Exemplo:</b> um personagem com <b>Inteligência 2</b> recebe
+            <b>2 Perícias Extras</b> além das ganhas por árvores de talentos e
+            <b>2 Idiomas Extras</b> além do seu nativo e comumn.
+          </p>
+        </div>
+        <div class="col-3">
+          <div class="row">
+            <div class="col-12">
+              <app-attribute
+                [points]="points"
+                [attribute]="int"
+                (changePoints)="calculaPontos($event)"
+              ></app-attribute>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 mt-2">
+              <div class="card-game">
+                <div class="row align-items-center for-row mb-2">
+                  <div class="row align-items-center for-row">
+                    <div class="col-12 label maiuscula-laranja-larga-negrito-center">
+                      QUANTIDADE DE PERÍCIA EXTRAS
+                    </div>
+                    <br />
+                    <div class="col-12 label maiuscula-laranja-xxlarga-negrito-center">
+                      {{ this.int.total! }}
+                    </div>
+                  </div>
                 </div>
                 <br />
-                <div class="col-12 label maiuscula-laranja-xxlarga-negrito-center">
-                  {{ this.des.total! }}
+                <div class="row align-items-center for-row mb-2">
+                  <div class="row align-items-center for-row">
+                    <div class="col-12 label maiuscula-laranja-larga-negrito-center">
+                      QUANTIDADE DE IDIOMA EXTRAS
+                    </div>
+                    <br />
+                    <div class="col-12 label maiuscula-laranja-xxlarga-negrito-center">
+                      {{ this.int.total! }}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -207,207 +398,152 @@
     <mat-card>
       <div class="row">
         <div class="col-3">
-          <app-attribute
-            [points]="points"
-            [attribute]="con"
-            (changePoints)="calculaPontos($event)"
-          ></app-attribute>
-        </div>
-        <div class="col-6">
-          <p>
-            Sua saúde e vigor. A Constituição é aplicada aos subcategorias de atributos: PONTOS DE
-            VIDA E PONTOS DE ESTAMINA. Se a Constituição muda, PONTOS DE VIDA E PONTOS DE ESTAMINA
-            retroativamente de acordo.
-          </p>
-          <p>
-            Seus PONTOS DE VIDA crescem em uma progressão de 3+CONSTITUIÇÃO por nível, e só se
-            recuperam por cura e descanso.
-          </p>
-          <p>
-            Seus PONTOS DE ESTAMINA crescem em uma progressão de 3+CONSTITUIÇÃO por nível, são
-            gastos com habilidades de combates e são recuperados quando o seu personagem apanha ou
-            bate (1 ponto por interação).
-          </p>
-        </div>
-        <div class="col-3">
-          <div class="card-game">
-            <div class="row align-items-center for-row mb-2">
-              <div class="row align-items-center for-row">
-                <div class="col-12 label maiuscula-laranja-larga-negrito-center">
-                  PONTOS DE VIDA
-                </div>
-                <br />
-                <div class="col-12 label maiuscula-laranja-xxlarga-negrito-center">
-                  {{ this.calculoVida(this.con.total!) + '/nível' }}
-                </div>
-              </div>
+          <div class="row">
+            <div class="col-12">
+              <app-attribute
+                [points]="points"
+                [attribute]="sab"
+                (changePoints)="calculaPontos($event)"
+              ></app-attribute>
             </div>
-            <br />
-            <div class="row align-items-center for-row mb-2">
-              <div class="row align-items-center for-row">
-                <div class="col-12 label maiuscula-laranja-larga-negrito-center">ESTAMINA</div>
+          </div>
+          <div class="row">
+            <div class="col-12 mt-2">
+              <div class="card-game">
+                <div class="row align-items-center for-row mb-2">
+                  <div class="row align-items-center for-row">
+                    <div class="col-12 label maiuscula-laranja-larga-negrito-center">
+                      PONTOS DE MANA
+                    </div>
+                    <br />
+                    <div class="col-12 label maiuscula-laranja-xxlarga-negrito-center">
+                      {{ calculoMana(this.sab.total!) }}
+                    </div>
+                  </div>
+                </div>
                 <br />
-                <div class="col-12 label maiuscula-laranja-xxlarga-negrito-center">
-                  {{ this.calculoVida(this.con.total!) + '/nível' }}
+                <div class="row align-items-center for-row mb-2">
+                  <div class="row align-items-center for-row">
+                    <div class="col-12 label maiuscula-laranja-larga-negrito-center">
+                      N° REAÇÕES POR RODADA
+                    </div>
+                    <br />
+                    <div class="col-12 label maiuscula-laranja-xxlarga-negrito-center">
+                      {{ this.sab.total! }}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+        <div class="col-9">
+          <p>
+            <b>SABEDORIA</b> representa a percepção, a atenção, o bom senso e a determinação do seu
+            personagem. Ela influencia duas coisas principais: <b>PONTOS DE MANA</b> e
+            <b>REAÇÕES</b>.
+          </p>
+
+          <p>
+            <b>PONTOS DE MANA (PM):</b> representam a energia usada para realizar magias e outras
+            habilidades especiais. Você ganha <b>3 + Sabedoria</b> Pontos de Mana a cada nível. Seus
+            Pontos de Mana são recuperados com <b>descanso e itens alquímicos</b>.
+          </p>
+
+          <p>
+            <b>REAÇÕES:</b> representam a capacidade do seu personagem de responder rapidamente a
+            acontecimentos, perigos ou situações inesperadas. Você possui uma quantidade de
+            <b>Reações igual ao seu valor de Sabedoria</b>.
+          </p>
+
+          <p>
+            <b>Exemplo:</b> um personagem com <b>Sabedoria 3</b> ganha
+            <b>6 Pontos de Mana por nível</b> e possui <b>3 Reações</b>.
+          </p>
         </div>
       </div>
     </mat-card>
     <br />
     <mat-card>
       <div class="row">
-        <div class="col-3">
-          <app-attribute
-            [points]="points"
-            [attribute]="int"
-            (changePoints)="calculaPontos($event)"
-          ></app-attribute>
-        </div>
-        <div class="col-6">
+        <div class="col-9">
           <p>
-            Sua capacidade de raciocínio, memória e educação. Além disso, se sua INTELIGÊNCIA for
-            positiva, ela define as subcategorias de QUANTIDADE DE PERÍCIAS EXTRAS E QUANTIDADE DE
-            IDIOMAS EXTRAS de igual valor ao valor da própria INTELIGÊNCIA.
+            <b>CARISMA</b> representa a força da personalidade, a capacidade de persuasão e a
+            influência do seu personagem. Ela também pode representar sua simpatia, presença e
+            beleza. O Carisma influencia duas coisas principais: <b>DETERMINAÇÃO</b> e
+            <b>CRÉDITO SOCIAL</b>.
+          </p>
+
+          <p>
+            <b>DETERMINAÇÃO:</b> representa a força de vontade do seu personagem e sua capacidade de
+            impor sua vontade diante de outras pessoas e até mesmo do mundo. Você possui uma
+            quantidade de <b>Determinação igual ao seu Carisma</b>.
+          </p>
+
+          <p>
+            Você pode gastar <b>1 ponto de Determinação</b> para receber
+            <b>+1 de bônus em um teste que acabou de realizar</b>. Escolha usar o ponto depois de
+            ver o resultado do teste.
+          </p>
+
+          <p>
+            Você recupera <b>1 ponto de Determinação</b> a cada dia de descanso, a cada vitória em
+            combate, a cada tarefa importante concluída e quando fizer uma interpretação
+            especialmente marcante. Use sua Determinação com cuidado para aproveitar esses momentos.
+          </p>
+
+          <p>
+            <b>CRÉDITO SOCIAL:</b> representa o quanto seu personagem é conhecido, respeitado e
+            influente. Você possui uma quantidade de <b>Crédito Social igual ao seu Carisma</b>.
+          </p>
+
+          <p>
+            Você pode gastar Crédito Social para conseguir
+            <b>informações, favores, contatos ou ajuda</b> sem precisar fazer um teste. Porém,
+            favores e informações têm um preço: para recuperar seu Crédito Social, você precisará
+            retribuir os favores ou construir novas relações.
+          </p>
+
+          <p>
+            <b>Exemplo:</b> um personagem com <b>Carisma 3</b> possui
+            <b>3 pontos de Determinação</b> e <b>3 pontos de Crédito Social</b>.
           </p>
         </div>
         <div class="col-3">
-          <div class="card-game">
-            <div class="row align-items-center for-row mb-2">
-              <div class="row align-items-center for-row">
-                <div class="col-12 label maiuscula-laranja-larga-negrito-center">
-                  QUANTIDADE DE PERÍCIA EXTRAS
-                </div>
-                <br />
-                <div class="col-12 label maiuscula-laranja-xxlarga-negrito-center">
-                  {{ this.int.total! }}
-                </div>
-              </div>
-            </div>
-            <br />
-            <div class="row align-items-center for-row mb-2">
-              <div class="row align-items-center for-row">
-                <div class="col-12 label maiuscula-laranja-larga-negrito-center">
-                  QUANTIDADE DE IDIOMA EXTRAS
-                </div>
-                <br />
-                <div class="col-12 label maiuscula-laranja-xxlarga-negrito-center">
-                  {{ this.int.total! }}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </mat-card>
-    <br />
-    <mat-card>
-      <div class="row">
-        <div class="col-3">
-          <app-attribute
-            [points]="points"
-            [attribute]="sab"
-            (changePoints)="calculaPontos($event)"
-          ></app-attribute>
-        </div>
-        <div class="col-6">
-          <p>
-            Sua observação, ponderação e determinação. Associada a ela estão as duas subcategorias
-            de atributo PONTOS DE MANA E REAÇÕES.
-          </p>
-          <p>
-            Os PONTOS DE MANA progridem na proporção 3+SABEDORIA por nível, e podem ser recuperados
-            com descanso e itens alquímicos.
-          </p>
-          <p>
-            As REAÇÕES são as capacidades de igual valor da SABEDORIA, de responder a um evento ou a
-            um gatilho.
-          </p>
-        </div>
-        <div class="col-3">
-          <div class="card-game">
-            <div class="row align-items-center for-row mb-2">
-              <div class="row align-items-center for-row">
-                <div class="col-12 label maiuscula-laranja-larga-negrito-center">
-                  PONTOS DE MANA
-                </div>
-                <br />
-                <div class="col-12 label maiuscula-laranja-xxlarga-negrito-center">
-                  {{ calculoMana(this.sab.total!) }}
-                </div>
-              </div>
-            </div>
-            <br />
-            <div class="row align-items-center for-row mb-2">
-              <div class="row align-items-center for-row">
-                <div class="col-12 label maiuscula-laranja-larga-negrito-center">
-                  N° REAÇÕES POR RODADA
-                </div>
-                <br />
-                <div class="col-12 label maiuscula-laranja-xxlarga-negrito-center">
-                  {{ this.sab.total! }}
-                </div>
-              </div>
+          <div class="row">
+            <div class="col-12">
+              <app-attribute
+                [points]="points"
+                [attribute]="car"
+                (changePoints)="calculaPontos($event)"
+              ></app-attribute>
             </div>
           </div>
-        </div>
-      </div>
-    </mat-card>
-    <br />
-    <mat-card>
-      <div class="row">
-        <div class="col-3">
-          <app-attribute
-            [points]="points"
-            [attribute]="car"
-            (changePoints)="calculaPontos($event)"
-          ></app-attribute>
-        </div>
-        <div class="col-6">
-          <p>
-            Sua força de personalidade e capacidade de persuasão, além de uma mistura de simpatia e
-            beleza. Associada a ele estão as duas subcategorias de atributo DETERMINAÇÃO E CRÉTIDO
-            SOCIAL.
-          </p>
-          <p>
-            O CARISMA significa o quanto seu personagem consegue impor sua vontade,aos outros e ao
-            próprio mundo: sua DETERMINAÇÃO. Você tem DETERMINAÇÃO igual ao seu CARISMA. Com um
-            ponto de DETERMINAÇÃO adicionar bônus de +1 de bônus em testes recém realizado por ponto
-            de DETERMINAÇÃO. Seu personagem recupera 1 ponto de Determinação a cada dia de descanso,
-            a cada vitória em combate, a cada tarefa completada e a cada interpretação feita com
-            maestria, então gerencie bem a determinação dele.
-          </p>
-          <p>
-            Além disso, CARISMA mede o quão influente e querido você é. Você tem CRÉDITO SOCIAL
-            igual ao seu CARISMA. Você pode gastá-lo para conseguir informações, favores, contatos
-            ou até ajuda, sem testes. Lembre que, para recarregar seu Crédito Social, informações e
-            favores serão cobrados.
-          </p>
-        </div>
-        <div class="col-3">
-          <div class="card-game">
-            <div class="row align-items-center for-row mb-2">
-              <div class="row align-items-center for-row">
-                <div class="col-12 label maiuscula-laranja-larga-negrito-center">
-                  CRÉDITO SOCIAL
+          <div class="row">
+            <div class="col-12 mt-2">
+              <div class="card-game">
+                <div class="row align-items-center for-row mb-2">
+                  <div class="row align-items-center for-row">
+                    <div class="col-12 label maiuscula-laranja-larga-negrito-center">
+                      CRÉDITO SOCIAL
+                    </div>
+                    <br />
+                    <div class="col-12 label maiuscula-laranja-xxlarga-negrito-center">
+                      {{ this.car.total! }}
+                    </div>
+                  </div>
                 </div>
                 <br />
-                <div class="col-12 label maiuscula-laranja-xxlarga-negrito-center">
-                  {{ this.car.total! }}
-                </div>
-              </div>
-            </div>
-            <br />
-            <div class="row align-items-center for-row mb-2">
-              <div class="row align-items-center for-row">
-                <div class="col-12 label maiuscula-laranja-larga-negrito-center">
-                  PONTOS DE DETERMINAÇÃO
-                </div>
-                <br />
-                <div class="col-12 label maiuscula-laranja-xxlarga-negrito-center">
-                  {{ this.car.total! }}
+                <div class="row align-items-center for-row mb-2">
+                  <div class="row align-items-center for-row">
+                    <div class="col-12 label maiuscula-laranja-larga-negrito-center">
+                      PONTOS DE DETERMINAÇÃO
+                    </div>
+                    <br />
+                    <div class="col-12 label maiuscula-laranja-xxlarga-negrito-center">
+                      {{ this.car.total! }}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -420,60 +556,89 @@
     <mat-card>
       <div class="row">
         <div class="col-3">
-          <app-attribute
-            [points]="points"
-            [attribute]="sor"
-            (changePoints)="calculaPontos($event)"
-          ></app-attribute>
-        </div>
-        <div class="col-6">
-          <p>
-            A SORTE, o tão desejado atributo, pode te salvar nos momentos mais difíceis. Nos
-            combates mais letais. Além de garantir aquela graninha extra. E dois subatributos estão
-            ligados a SORTE: FORTUNA e PONTOS DE DESTINO.
-          </p>
-          <p>
-            O personagem tem o mesmo número de FORTUNA que o atributo SORTE. Com FORTUNA, a sorte
-            influencia em como ganhar dinheiro. Toda rolagem de tesouro soma FORTUNA NO PERCENTURAL
-            da rolagem de tesouro.
-          </p>
-          <p>
-            A Sorte também define o quanto os deuses, o universo, ou até seu personagem estão de
-            olho em seu personagem, criando um pool de PONTOS DE DESTINO igual valor ao atributo. À
-            medida que vai jogando, você pode gastar um PONTOS DE DESTINO para somar 1d6 ao teste. A
-            diferença para DETERMINAÇÃO, é que essa soma será feita antes de saber se atingiu a CD,
-            enquanto a DETERMINAÇÃO é depois de saber se atingiu a CD ou não. Para recuperar esse
-            ponto, basta ser fiel a si mesmo (interpretativamente) ou, caso seja um Servo Divino,
-            também ao seu deus. Aos poucos, o mestre vai lhe concedendo Pontos de Sorte
-            naturalmente.
-          </p>
-        </div>
-        <div class="col-3">
-          <div class="card-game">
-            <div class="row align-items-center for-row mb-2">
-              <div class="row align-items-center for-row">
-                <div class="col-12 label maiuscula-laranja-larga-negrito-center">
-                  BÔNUS DE TESOURO (%)
-                </div>
-                <br />
-                <div class="col-12 label maiuscula-laranja-xxlarga-negrito-center">
-                  {{ this.sor.total + '%' }}
-                </div>
-              </div>
+          <div class="row">
+            <div class="col-12">
+              <app-attribute
+                [points]="points"
+                [attribute]="sor"
+                (changePoints)="calculaPontos($event)"
+              ></app-attribute>
             </div>
-            <br />
-            <div class="row align-items-center for-row mb-2">
-              <div class="row align-items-center for-row">
-                <div class="col-12 label maiuscula-laranja-larga-negrito-center">
-                  PONTOS DE SORTE
+          </div>
+          <div class="row">
+            <div class="col-12 mt-2">
+              <div class="card-game">
+                <div class="row align-items-center for-row mb-2">
+                  <div class="row align-items-center for-row">
+                    <div class="col-12 label maiuscula-laranja-larga-negrito-center">
+                      BÔNUS DE TESOURO (%)
+                    </div>
+                    <br />
+                    <div class="col-12 label maiuscula-laranja-xxlarga-negrito-center">
+                      {{ this.sor.total + '%' }}
+                    </div>
+                  </div>
                 </div>
                 <br />
-                <div class="col-12 label maiuscula-laranja-xxlarga-negrito-center">
-                  {{ this.sor.total! }}
+                <div class="row align-items-center for-row mb-2">
+                  <div class="row align-items-center for-row">
+                    <div class="col-12 label maiuscula-laranja-larga-negrito-center">
+                      PONTOS DE SORTE
+                    </div>
+                    <br />
+                    <div class="col-12 label maiuscula-laranja-xxlarga-negrito-center">
+                      {{ this.sor.total! }}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+        <div class="col-9">
+          <p>
+            <b>SORTE</b> representa a capacidade do seu personagem de escapar do perigo, encontrar
+            oportunidades e estar no lugar certo na hora certa. Ela influencia duas coisas
+            principais: <b>FORTUNA</b> e <b>PONTOS DE DESTINO</b>.
+          </p>
+
+          <p>
+            <b>FORTUNA:</b> representa a influência da sorte sobre os ganhos do seu personagem. Você
+            possui uma quantidade de <b>Fortuna igual ao seu valor de Sorte</b>. Sempre que fizer
+            uma rolagem de tesouro, sua Fortuna é adicionada à <b>porcentagem da rolagem</b>,
+            aumentando suas chances de encontrar recompensas melhores.
+          </p>
+
+          <p>
+            <b>PONTOS DE DESTINO:</b> representam a influência da sorte, dos deuses, do universo ou
+            do próprio destino sobre seu personagem. Você possui uma quantidade de
+            <b>Pontos de Destino igual ao seu valor de Sorte</b>.
+          </p>
+
+          <p>
+            Você pode gastar <b>1 Ponto de Destino</b> para adicionar
+            <b>1d6 ao resultado de um teste</b>. Essa rolagem deve ser feita
+            <b>antes de saber se o teste foi bem-sucedido</b>.
+          </p>
+
+          <p>
+            Isso diferencia os Pontos de Destino da <b>Determinação</b>. O Ponto de Destino é usado
+            <b>antes</b> de saber o resultado do teste, enquanto a Determinação pode ser usada
+            <b>depois</b> de ver o resultado.
+          </p>
+
+          <p>
+            Você recupera Pontos de Destino ao agir de acordo com quem seu personagem realmente é.
+            Para <b>Servos Divinos</b>, isso também inclui seguir os princípios e a vontade de seu
+            deus. O Mestre pode conceder novos Pontos de Destino quando essas atitudes forem
+            marcantes durante a aventura.
+          </p>
+
+          <p>
+            <b>Exemplo:</b> um personagem com <b>Sorte 3</b> possui <b>3 pontos de Fortuna</b> e
+            <b>3 Pontos de Destino</b>. Se gastar 1 Ponto de Destino em um teste, rola <b>1d6</b> e
+            soma o resultado ao teste antes de saber se conseguiu ou não.
+          </p>
         </div>
       </div>
     </mat-card>
